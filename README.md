@@ -1,4 +1,4 @@
-# Neuracet Notes
+# NeuraNotes
 
 A modern, minimalistic note-taking Android app built specifically for the Neuracet AI club. The app is designed to streamline meeting notes by automatically generating AI summaries and publishing them directly to our Discord server.
 

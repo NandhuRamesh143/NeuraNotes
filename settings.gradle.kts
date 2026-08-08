@@ -22,6 +22,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "Neuracet Notes"
+rootProject.name = "NeuraNotes"
 
 include(":app")

@@ -29,7 +29,7 @@ fun LoginScreen(authViewModel: AuthViewModel) {
             modifier = Modifier.padding(24.dp)
         ) {
             Text(
-                text = "Neuracet Notes",
+                text = "NeuraNotes",
                 style = MaterialTheme.typography.displayMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onBackground

@@ -32,7 +32,7 @@ app.post('/send-to-discord', async (req, res) => {
         }
 
         const discordPayload = {
-            username: 'Neuracet Notes Bot',
+            username: 'NeuraNotes Bot',
             embeds: [
                 {
                     title: safeTitle,

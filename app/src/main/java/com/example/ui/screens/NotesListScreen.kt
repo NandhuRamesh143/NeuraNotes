@@ -37,7 +37,7 @@ fun NotesListScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Neuracet Notes") },
+                title = { Text("NeuraNotes") },
                 actions = {
                     IconButton(onClick = { authViewModel.signOut() }) {
                         Icon(Icons.Default.ExitToApp, contentDescription = "Sign Out")
