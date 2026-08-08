@@ -22,10 +22,14 @@ class NoteRepository {
         val userId = auth.currentUser?.uid ?: return@callbackFlow
         val subscription = notesCollection
             .whereEqualTo("userId", userId)
-            .orderBy("updatedAt", Query.Direction.DESCENDING)
-            .addSnapshotListener { snapshot, _ ->
+            .addSnapshotListener { snapshot, e ->
+                if (e != null) {
+                    Log.e("NoteRepository", "Listen failed.", e)
+                    return@addSnapshotListener
+                }
                 if (snapshot != null) {
                     val notes = snapshot.toObjects(Note::class.java)
+                        .sortedByDescending { it.updatedAt }
                     trySend(notes)
                 }
             }

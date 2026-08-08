@@ -55,8 +55,10 @@ class AuthViewModel : ViewModel() {
                 val result = credentialManager.getCredential(context = context, request = request)
                 val credential = result.credential
 
-                if (credential is GoogleIdTokenCredential) {
-                    val idToken = credential.idToken
+                if (credential is androidx.credentials.CustomCredential &&
+                    credential.type == GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL) {
+                    val googleIdTokenCredential = GoogleIdTokenCredential.createFrom(credential.data)
+                    val idToken = googleIdTokenCredential.idToken
                     val firebaseCredential = GoogleAuthProvider.getCredential(idToken, null)
                     auth.signInWithCredential(firebaseCredential).await()
                 } else {
